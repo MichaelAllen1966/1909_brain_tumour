@@ -16,3 +16,7 @@ A short introduction to image processing using Neural Nets to detect tumours in 
 To speed things up the images are converted to greyscale using the `cv2.imread()` function. Images are cropped to the limit of the brain scan using simple light and dark analysis. Keras manages image rotation and reflection so that doesn't need to be managed in the code.
 
 Use SciKitLearn to split into Training and Test data; this should really be done with k-fold validation. The `reshape()` puts it into an array form acceptable to Tensorflow; image files typically have 3 arrays of colours so 3 channels (RGB) which is represented as 3 arrays (each channel is read left-right, top-bottom), these are all wrapped in an array, ie. for a 4 pixel image: `[[r0, r1, r2, r3], [g0, g1, g2, g3], [b0, b1, b2, b3]]`. A grey-scaled array which has but one channel has `[[grey0, grey1, grey2, grey3]]` since Tensorflow expects the same array structure.
+
+This net has 3 (paired) layers, each using 3x3 kernals, the first 2 layers have 32 kernals while the last has 64, to represent 64 possible "features"; these are values found by refinement. The remaining layers consolidate the values.
+
+The `model.compile()` function writes it to Hexadecimal and writes it to the GPU memory. For the fit, the batch size is tuned to be speedy (high) but able to fine tune the model (low).
