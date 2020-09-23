@@ -1,0 +1,17 @@
+name: brain
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pip
+  - pandas
+  - python
+  - pytorch
+  - scikit-learn
+  - spyder
+  - tensorflow
+  - pip:
+    - opencv-python
