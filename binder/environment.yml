@@ -9,9 +9,9 @@ dependencies:
   - pip
   - pandas
   - python
-  - pytorch
   - scikit-learn
   - spyder
-  - tensorflow
+  - tensorflow-gpu
   - pip:
+    - imutils
     - opencv-python
